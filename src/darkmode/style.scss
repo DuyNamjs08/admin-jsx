@@ -1,0 +1,63 @@
+.App.dark {
+    background-color: #222;
+    color: #fafafa;
+    .search{
+        border: 1px solid #fff;
+        background-color: #fff;
+        .search_icon{
+            color: #222;
+        }
+    }
+    .sidebar{
+        border-color: #333;
+        .top{
+        border-color: #333;
+
+        }
+        .center{
+            ul{
+                li{
+                    &:hover{
+                        background: #555;
+                    }
+                }
+            }
+        }
+        .bottom{
+        border-color: #333;
+        }
+    }
+    .navbar{
+        border-color: #333;
+    }
+    .listContainer{
+        background-color: #222;
+        color: #fafafa;
+        .tabledark{
+            background-color: #222 ;
+            color: rgba(255, 255, 255, 0.781) !important;
+        }
+    }
+    .datatable{
+        .datatableBox{
+            color: rgba(255, 255, 255, 0.781) !important;
+            .viewButton , .deleteButton{
+                color: rgba(255, 255, 255, 0.781) !important;
+                border: 1px solid rgba(255, 255, 255, 0.781) ;
+            }
+        }
+    }
+    .new{
+        .bottom{
+            label{
+                color: rgba(255, 255, 255, 0.781) !important;
+            }
+        }
+    }
+    .single{
+        .tabledark{
+            background-color: #222 ;
+            color: rgba(255, 255, 255, 0.781) !important;
+        }
+    }
+}
