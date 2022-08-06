@@ -1,63 +1,68 @@
-.login{
-    display: flex;
-    justify-content: center;
-    .loginContainer{
-        flex: 6;
-        .title{
-            text-align: center;
-            h1{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .icon{
-                font-size: 30px;
-                margin-right: 10px;
-            }
-        }
-        .formLogin{ 
-            margin: 0 auto;
-            margin-top: 50px;
-            padding: 10px;
-            border: 1px solid teal;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 400px;
-            height: 400px;
-            flex-direction: column;
-            background: #fb9405     ;
-            border-radius: 6px;
-            div{
-                width: 260px;
-                margin: 10px;
-                color: white;
-                input{
-                    width: 100%;
-                    padding: 10px ;
-                    border-bottom: 0.5px solid rgb(226, 226, 226);
-                    outline: none;
-                    border: none;
-                    border-radius: 6px;
-                    font-size: 18px;
-                }
-            }
-            button{
-                padding: 10px 20px ;
-                border-radius: 6px;
-                outline: none;
-                border: none;
-                background: rgb(207, 21, 83) ;
-                font-size: 20px;
-                color: white;
-                cursor: pointer;
-            }
-            span{
-                margin-top: 10px;
-                font-size: 12px;
-                color: red;
-            }
-        }
+.login {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background: url(../../images/5183000.jpg) no-repeat  ;
+  object-fit: cover;
+  .loginContainer {
+    .title {
+      text-align: center;
+      h1 {
+        font-size: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .icon {
+        font-size: 30px;
+        margin-right: 10px;
+      }
     }
-    
+    .formLogin {
+      margin: 0 auto;
+      margin-top: 40px;
+      padding: 10px;
+      box-shadow: 8px 6px 19px 0px rgba(0, 0, 0, 0.43);
+      -webkit-box-shadow: 8px 6px 19px 0px rgba(0, 0, 0, 0.43);
+      -moz-box-shadow: 8px 6px 19px 0px rgba(0, 0, 0, 0.43);
+      // border: 1px solid teal;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 400px;
+      height: 400px;
+      flex-direction: column;
+      background: #52a8a8;
+      border-radius: 6px;
+      div {
+        width: 260px;
+        margin: 10px;
+        color: white;
+        input {
+          width: 100%;
+          padding: 10px;
+          border-bottom: 0.5px solid rgb(226, 226, 226);
+          outline: none;
+          border: none;
+          border-radius: 6px;
+          font-size: 18px;
+        }
+      }
+      button {
+        padding: 10px 20px;
+        border-radius: 6px;
+        outline: none;
+        border: none;
+        background: rgb(207, 21, 83);
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+      }
+      span {
+        margin-top: 10px;
+        font-size: 12px;
+        color: red;
+      }
+    }
+  }
 }

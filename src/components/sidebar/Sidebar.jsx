@@ -6,9 +6,9 @@ import Inventory2Icon from '@mui/icons-material/Inventory2';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import InsertChartIcon from '@mui/icons-material/InsertChart';
 import CircleNotificationsIcon from '@mui/icons-material/CircleNotifications';
-import SettingsSystemDaydreamIcon from '@mui/icons-material/SettingsSystemDaydream';
-import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
-import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications';
+// import SettingsSystemDaydreamIcon from '@mui/icons-material/SettingsSystemDaydream';
+// import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
+// import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications';
 import PersonIcon from '@mui/icons-material/Person';
 import LogoutIcon from '@mui/icons-material/Logout';
 import {Link} from 'react-router-dom'
@@ -18,6 +18,7 @@ import {  signOut } from "firebase/auth";
 import {auth} from '../../firebase/firebase.Config'
 import { useNavigate} from 'react-router-dom'
 import {LogOutauth} from '../../reduxStore/action'
+
 
 
 function Sidebar(props) {
@@ -75,16 +76,16 @@ function Sidebar(props) {
           <li> <CircleNotificationsIcon  className='icon'/>
             <span>Notifications</span>
           </li>
-          <p className="title">SERVICE</p>
-          <li> <SettingsSystemDaydreamIcon className='icon' />
+          {/* <p className="title">SERVICE</p> */}
+          {/* <li> <SettingsSystemDaydreamIcon className='icon' />
             <span>System heath</span>
-          </li>
-          <li> <ChatBubbleOutlineIcon className='icon' />
+          </li> */}
+          {/* <li> <ChatBubbleOutlineIcon className='icon' />
             <span>Logs</span>
           </li>
           <li> <SettingsApplicationsIcon  className='icon'/>
             <span>Setting</span>
-          </li>
+          </li> */}
           <p className="title">USER</p>
           <li> <PersonIcon className='icon' />
             <span>Profile</span>

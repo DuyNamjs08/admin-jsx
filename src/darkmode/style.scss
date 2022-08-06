@@ -17,8 +17,10 @@
         .center{
             ul{
                 li{
+                    span{
+                        color: #fafafa;}
                     &:hover{
-                        background: #555;
+                        background: #fff;
                     }
                 }
             }
