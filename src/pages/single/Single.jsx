@@ -11,6 +11,7 @@ function Single(props) {
       <Sidebar />
       <div className="singleContainer">
         <Navbar />
+        <div style={{marginTop:50}}>
         <div className="top">
           <div className="left">
             <div className="editButton">Edit</div>
@@ -48,6 +49,7 @@ function Single(props) {
         </div>
         <div className="bottom">
             <Lists />
+        </div>
         </div>
       </div>
     </div>

@@ -1,0 +1,16 @@
+{
+    "main": "主要",
+	"dashboard": "ダッシュボード",
+	"lists": "リスト",
+	"users": "ユーザー",
+	"products": "製品",
+	"orders": "注文",
+	"category": "カテゴリー",
+	"useful": "使える",
+	"status": "状態",
+	"notifications": "通知",
+	"user": "ユーザー",
+	"profile": "プロフィール",
+	"logout": "ログアウト"
+	
+}

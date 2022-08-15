@@ -9,7 +9,7 @@ function List(props) {
            <Sidebar />
            <div className="listContainer">
             <Navbar />
-            <Datatable />
+            <div style={{marginTop:50}}><Datatable /></div>
            </div>
         </div>
     );

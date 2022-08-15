@@ -13,6 +13,7 @@ function Home(props) {
       <Sidebar />
       <div className="homeContainer">
         <Navbar />
+        <div style={{marginTop:50 ,}}>
         <div className="widgets">
           <Widget type="user" />
           <Widget type="order" />
@@ -26,6 +27,7 @@ function Home(props) {
         <div className="listContainer">
           <div className="listTitle">Latest Transactions</div>
           <Lists />
+        </div>
         </div>
       </div>
     </div>

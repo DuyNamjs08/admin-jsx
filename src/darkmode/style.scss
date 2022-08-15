@@ -18,9 +18,10 @@
             ul{
                 li{
                     span{
-                        color: #fafafa;}
-                    &:hover{
-                        background: #fff;
+                        color: #fafafa;
+                        &:hover{
+                            color: #333 !important;
+                        }
                     }
                 }
             }

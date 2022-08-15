@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import {Provider} from 'react-redux'
 import store from './reduxStore/store'
+import './translate/i18n'
 
 
 ReactDOM.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <Provider store={store} >
     <App />
     </Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
+  // </React.StrictMode>,
+  ,document.getElementById('root')
 );

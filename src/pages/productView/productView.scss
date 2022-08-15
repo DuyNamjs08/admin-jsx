@@ -1,0 +1,130 @@
+.productView {
+  display: flex;
+  .productViewContainer {
+    flex: 6;
+    .productViewMain {
+      padding: 20px;
+      .viewMain {
+        display: flex;
+        .left {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          box-shadow: 0px 2px 27px 5px rgba(0, 0, 0, 0.16);
+          -webkit-box-shadow: 0px 2px 27px 5px rgba(0, 0, 0, 0.16);
+          -moz-box-shadow: 0px 2px 27px 5px rgba(0, 0, 0, 0.16);
+          img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+          }
+        }
+        .right {
+          flex: 1.4;
+          width: 100%;
+          padding: 40px 40px 40px 60px;
+          margin: 0 auto;
+          box-shadow: 0px 2px 27px 5px rgba(0, 0, 0, 0.16);
+          -webkit-box-shadow: 0px 2px 27px 5px rgba(0, 0, 0, 0.16);
+          -moz-box-shadow: 0px 2px 27px 5px rgba(0, 0, 0, 0.16);
+          h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+          }
+          h4 {
+            margin-bottom: 10px;
+          }
+          h2 {
+            margin-bottom: 10px;
+          }
+          p {
+            margin-bottom: 20px;
+            width: 80%;
+          }
+          .ul1 {
+            display: flex;
+            margin-bottom: 20px;
+            .linkCart{
+              border: none;
+              outline: none;
+              padding:  0 10px ;
+              font-size: 20px;
+              background: #df0428 ;
+              color: #fff;
+              font-weight: bold;
+              cursor: pointer;
+            }
+            li {
+              display: flex;
+              list-style: none;
+              align-items: center;
+              height: 50px;
+              input {
+                width: 60px;
+                padding: 8px 8px;
+                display: flex;
+                font-size: 20px;
+              }
+              a {
+                text-decoration: none;
+                color: unset;
+              }
+              span {
+                margin: 0 20px;
+                font-size: 24px;
+              }
+            }
+            .box1 {
+              cursor: pointer;
+              width: 140px;
+              height: 50px;
+              margin-right: 20px;
+              position: relative;
+              text-align: center;
+              background: #f5f5f5;
+            }
+            .icon {
+              margin-left: 20px;
+              padding: 0 10px;
+              background: #f5f5f5;
+
+            }
+          }
+          .ul2 {
+            li {
+              margin-bottom: 10px;
+              list-style: none;
+              display: flex;
+              width: 100%;
+              .shareIcon{
+                cursor: pointer;
+                display: flex;
+                gap: 16px;
+                li{
+                  &:nth-child(1){
+                    color: #0f92f3;
+                  }
+                  &:nth-child(2){
+                    color: #0f92f3;
+                  }
+                  
+                  &:nth-child(4){
+                    color: #df0428;
+                  }
+                }
+              }
+              div {
+                width: 100px;
+                margin-right: 40px;
+                font-weight: bold;
+              }
+              span {
+                display: inline-block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

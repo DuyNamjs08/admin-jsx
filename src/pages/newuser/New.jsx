@@ -80,6 +80,7 @@ function New({ inputs, title }) {
       <Sidebar />
       <div className="newContainer">
         <Navbar />
+        <div style={{marginTop:80}}>
         <div className="top">
           <h1>{title}</h1>
         </div>
@@ -123,6 +124,7 @@ function New({ inputs, title }) {
               <button type="submit" disabled={per !== null && per <100}>Send</button>
             </form>
           </div>
+        </div>
         </div>
       </div>
     </div>

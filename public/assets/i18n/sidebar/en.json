@@ -1,0 +1,16 @@
+{
+    "main": "MAIN",
+	"dashboard": "Dashboard",
+	"lists": "LISTS",
+	"users": "Users",
+	"products": "Products",
+	"orders": "Orders",
+	"category": "Category",
+	"useful": "USEFUL",
+	"status": "Status",
+	"notifications": "Notifications",
+	"user": "USER",
+	"profile": "Profile",
+	"logout": "Logout"
+	
+}

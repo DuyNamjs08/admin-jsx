@@ -1,7 +1,7 @@
-import "./datatable.scss";
+import "./productTable.scss";
 import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
-import { userColumns } from "../../data/dataTableSource";
+import { userColumnProduct } from "../../data/dataTableSource";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import {
@@ -12,9 +12,11 @@ import {
   onSnapshot,
 } from "firebase/firestore";
 import { db } from "../../firebase/firebase.Config";
+import {useNavigate} from 'react-router-dom'
 
-function Datatable(props) {
+function ProductTable(props) {
   const [data, setData] = useState([]);
+  const navigate = useNavigate()
   useEffect(() => {
     // const list=[]
     // const fetchData = async () => {
@@ -33,7 +35,7 @@ function Datatable(props) {
     // listen Realtime
 
     const unsub = onSnapshot(
-      collection(db, "user"),
+      collection(db, "product"),
       (snapShot) => {
         let list = [];
         snapShot.docs.forEach((doc) => {
@@ -49,9 +51,11 @@ function Datatable(props) {
       unsub();
     };
   }, []);
+console.log(data);
+
   const handleDelete = async (id) => {
     try {
-      await deleteDoc(doc(db, "user", id));
+      await deleteDoc(doc(db, "product", id));
       setData(data.filter((item) => item.id !== id));
     } catch (error) {}
   };
@@ -61,12 +65,22 @@ function Datatable(props) {
       headerName: "Action",
       width: 200,
       renderCell: (params) => {
+        // console.log("checkk id product:", params.row.id);
+        const handleView =()=>{
+          
+          navigate('/product/viewProduct',{state: params.row.id})
+        }
         return (
           <div className="cellAction">
-            <Link to="/user/test" style={{ textDecoration: "none" }}>
-              <div className="viewButton">View</div>
+            {/* <Link  to="/product/viewProduct"
+             style={{ textDecoration: "none" }}> */}
+              <div onClick={handleView} className="viewButton">View</div>
+            {/* </Link> */}
+            <Link  to={`/product/${params.row.id}`} style={{ textDecoration: "none" }}>
+              <div className="viewButton">Edit</div>
             </Link>
             <div
+            
               className="deleteButton"
               onClick={() => handleDelete(params.row.id)}
             >
@@ -79,10 +93,10 @@ function Datatable(props) {
   ];
 
   return (
-    <div className="datatable">
+    <div className="dataProducttable">
       <div className="datatableTitle">
-        Add New User
-        <Link className="datatableAddLink" to="/user/new">
+        Add New Product
+        <Link className="datatableAddLink" to="/product/new">
           Add New
         </Link>
       </div>
@@ -90,7 +104,7 @@ function Datatable(props) {
         <DataGrid
           className="datatableBox"
           rows={data}
-          columns={userColumns.concat(actionColumn)}
+          columns={userColumnProduct.concat(actionColumn)}
           pageSize={9}
           rowsPerPageOptions={[9]}
           checkboxSelection
@@ -101,4 +115,4 @@ function Datatable(props) {
   );
 }
 
-export default Datatable;
+export default ProductTable;
