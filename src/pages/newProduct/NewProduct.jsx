@@ -64,7 +64,6 @@ function NewProduct({ inputs, title }) {
       const querySnapshot = await getDocs(collection(db, "product"));
       querySnapshot.forEach((doc) => {
         console.log(doc.data());
-        
       });
     };
     handleCheck();
@@ -77,9 +76,12 @@ function NewProduct({ inputs, title }) {
   };
   console.log("data.title", data);
 
+  const handleImg =(e) =>{
+    setFile(e.target.files[0])
+  }
+
   const handleAdd = async (e) => {
     e.preventDefault();
-
     try {
       await addDoc(collection(db, "product"), {
         ...data,
@@ -131,7 +133,8 @@ function NewProduct({ inputs, title }) {
                   <input
                     id="file"
                     type="file"
-                    onChange={(e) => setFile(e.target.files[0])}
+                    multiple
+                    onChange={handleImg}
                   />
                 </div>
                 {/* {inputs.map((item) => {
@@ -233,10 +236,7 @@ function NewProduct({ inputs, title }) {
                   </select>
                 </div>
 
-                <button
-                  type="submit"
-                  disabled={(per !== null && per < 100) }
-                >
+                <button type="submit" disabled={per !== null && per < 100}>
                   Send
                 </button>
               </form>

@@ -91,7 +91,7 @@ useEffect(() => {
       const docRef = doc(db, "product" , productId.productId);
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
-        console.log("Document data:", docSnap.data());
+        // console.log("Document data:", docSnap.data());
         try {
             setImg(docSnap.data().img)
             setTitle(docSnap.data().title);
