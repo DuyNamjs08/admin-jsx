@@ -4,9 +4,10 @@ import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import List from "./pages/list/List";
 import ListProduct from "./pages/listProduct/ListProduct";
-import New from "./pages/newuser/New";
+import New from "./pages/newuser/Newuser";
 import NewProduct from "./pages/newProduct/NewProduct";
 import Single from "./pages/single/Single";
+import UserItem from "./pages/userItem/UserItem";
 import Gggmap from './pages/ggmap/Gggmap';
 import Profile from './pages/profile/Profile';
 import ProductItem from './pages/productItem/ProductItem';
@@ -43,7 +44,8 @@ function App() {
               <Route path='checkout/:checkoutId' element={<RequireAuth ><CheckOut /></RequireAuth>} ></Route>
               <Route path='user'  >
                 <Route index element={<RequireAuth ><List /></RequireAuth>} ></Route>
-                <Route path=':userId' element={<RequireAuth ><Single /></RequireAuth>} ></Route>
+                <Route path=':userId' element={<RequireAuth ><UserItem /></RequireAuth>} ></Route>
+                <Route path='viewUser' element={<RequireAuth ><Single /></RequireAuth>} ></Route>
                 <Route path='new' element={<RequireAuth ><New inputs={userInputs} title="Add New User" /></RequireAuth>} ></Route>
               </Route>
 

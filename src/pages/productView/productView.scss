@@ -30,6 +30,7 @@
           h1 {
             font-size: 40px;
             margin-bottom: 10px;
+            color:#C21010
           }
           h4 {
             margin-bottom: 10px;
@@ -41,57 +42,25 @@
             margin-bottom: 20px;
             width: 80%;
           }
-          .ul1 {
-            display: flex;
-            margin-bottom: 20px;
-            .linkCart{
-              border: none;
-              outline: none;
-              padding:  0 10px ;
-              font-size: 20px;
-              background: #df0428 ;
-              color: #fff;
-              font-weight: bold;
-              cursor: pointer;
-            }
-            li {
-              display: flex;
-              list-style: none;
-              align-items: center;
-              height: 50px;
-              input {
-                width: 60px;
-                padding: 8px 8px;
-                display: flex;
-                font-size: 20px;
-              }
-              a {
-                text-decoration: none;
-                color: unset;
-              }
-              span {
-                margin: 0 20px;
-                font-size: 24px;
-              }
-            }
-            .box1 {
-              cursor: pointer;
-              width: 140px;
-              height: 50px;
-              margin-right: 20px;
-              position: relative;
-              text-align: center;
-              background: #f5f5f5;
-            }
-            .icon {
-              margin-left: 20px;
-              padding: 0 10px;
-              background: #f5f5f5;
-
-            }
-          }
           .ul2 {
             li {
+              .show__size{
+                display: grid;
+                grid-template-columns: 1fr 1fr ;
+                gap:10px 10px ;
+                .show__size__item{
+                  border: 1px solid #1C6758;
+                  padding: 5px 15px;
+                  cursor: pointer;
+                  text-align: center;
+                  margin-right: 0 !important;
+                }
+              }
+              .status__state{
+                border: 1px solid #C21010;
+                padding: 0   20px;
+                font-weight: bold;
+              }
               margin-bottom: 10px;
               list-style: none;
               display: flex;

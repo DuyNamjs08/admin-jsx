@@ -5,52 +5,60 @@ import { useLocation } from "react-router-dom";
 import { useEffect, useCallback } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebase.Config";
-import { useState  } from "react";
+import { useState } from "react";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 // import { Link } from "react-router-dom";
-import { useDispatch,useSelector  } from "react-redux";
-import {AddCart ,DelCart} from '../../reduxStore/action'
-
-
-
+import { useDispatch } from "react-redux";
 
 function ProductView() {
   const [data, setData] = useState({});
+  const [loading, setloading] = useState(true);
   const dispatch = useDispatch();
-  const cart = useSelector(state => state.CartReducer)
   const { state } = useLocation();
+  console.log("state product:", state);
 
   const handleView = useCallback(async () => {
     const docRef = doc(db, "product", state);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
-      //   console.log("Document data:", docSnap.data());
+      // console.log("Document data:", docSnap.data());
       setData(docSnap.data());
+      setloading(false);
     } else {
       console.log("No such document!");
     }
-  },[state])
+  }, [state]);
+  console.log("check data:", data.size);
 
-  
   useEffect(() => {
     if (state !== undefined && state !== "") {
       handleView();
     }
-  }, [handleView,state,dispatch]);
-  // console.log("datata:", data);
+  }, [handleView, state, dispatch]);
 
-  const HandleAdd =(product) =>{
-    data && dispatch(AddCart(product))
-  }
-  const HandleDelete =(product) =>{
-    console.log('HandleDelete')
-    data && dispatch(DelCart(product))
-  }
-  
+
+  const ShowImg = () => {
+    return (
+      <div>
+        {data.img.map((item) => {
+          return <img key={item.img} src={item.img} alt='item' />;
+        })}
+      </div>
+    );
+  };
+  const ShowSize = () => {
+    return (
+      <div className="show__size">
+        {data.size.map((item) => {
+          return <div className="show__size__item"  key={item.id}>{item.sizePd}</div>
+        })}
+      </div>
+    );
+  };
   return (
     <div className="productView">
       <Sidebar />
@@ -59,26 +67,16 @@ function ProductView() {
         <div className="productViewMain" style={{ marginTop: 60 }}>
           <div className="viewMain">
             <div className="left">
-              <img src={data.img} alt="" />
+              {/* <img src={data && data.img[0].img} alt="" /> */}
+              {loading ? <div>loading .....</div> : <ShowImg />}
             </div>
             <div className="right">
               <h1>{data.title}</h1>
               <h4>18 reviews</h4>
               <h2>$50.00</h2>
               <p>{data.description}</p>
-              <ul className="ul1">
-                <li className="box1">
-                  <span onClick={()=>HandleDelete(data)}>-</span>
-                  <div>{cart.length}</div>
-                  <span onClick={()=>HandleAdd(data)}>+</span>
-                </li>
-                <li  className="linkCart" onClick={()=>HandleAdd(data)}>
-                    Add to cart
-                </li>
-                <li className="icon ">
-                  <FavoriteBorderIcon />
-                </li>
-              </ul>
+              <FavoriteBorderIcon />
+
               <ul className="ul2">
                 <li>
                   <div>Category</div>
@@ -91,6 +89,14 @@ function ProductView() {
                 <li>
                   <div>In Stock</div>
                   <span>{data.stock}</span>
+                </li>
+                <li>
+                  <div>Status</div>
+                  <span className="status__state">{data.status}</span>
+                </li>
+                <li>
+                  <div>Size</div>
+                  <span> {loading ? <div>loading .....</div> : <ShowSize />}</span>
                 </li>
                 <li>
                   <div>Share on</div>

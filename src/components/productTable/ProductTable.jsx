@@ -12,11 +12,13 @@ import {
   onSnapshot,
 } from "firebase/firestore";
 import { db } from "../../firebase/firebase.Config";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
+import LoadingMui from "../loading/LoadingMui";
 
 function ProductTable(props) {
   const [data, setData] = useState([]);
-  const navigate = useNavigate()
+  const [loading , setLoading]=useState(true)
+  const navigate = useNavigate();
   useEffect(() => {
     // const list=[]
     // const fetchData = async () => {
@@ -42,6 +44,7 @@ function ProductTable(props) {
           list.push({ id: doc.id, ...doc.data() });
         });
         setData(list);
+        setLoading(false)
       },
       (error) => {
         console.log(error);
@@ -51,9 +54,9 @@ function ProductTable(props) {
       unsub();
     };
   }, []);
-console.log(data);
+  console.log('data:',data);
 
-  const handleDelete = async (id) => {
+  const handleDelete = async(id) => {
     try {
       await deleteDoc(doc(db, "product", id));
       setData(data.filter((item) => item.id !== id));
@@ -66,21 +69,24 @@ console.log(data);
       width: 200,
       renderCell: (params) => {
         // console.log("checkk id product:", params.row.id);
-        const handleView =()=>{
-          
-          navigate('/product/viewProduct',{state: params.row.id})
-        }
+        const handleView = () => {
+          navigate("/product/viewProduct", { state: params.row.id });
+        };
         return (
           <div className="cellAction">
             {/* <Link  to="/product/viewProduct"
              style={{ textDecoration: "none" }}> */}
-              <div onClick={handleView} className="viewButton">View</div>
+            <div onClick={handleView} className="viewButton">
+              View
+            </div>
             {/* </Link> */}
-            <Link  to={`/product/${params.row.id}`} style={{ textDecoration: "none" }}>
+            <Link
+              to={`/product/${params.row.id}`}
+              style={{ textDecoration: "none" }}
+            >
               <div className="viewButton">Edit</div>
             </Link>
             <div
-            
               className="deleteButton"
               onClick={() => handleDelete(params.row.id)}
             >
@@ -93,6 +99,8 @@ console.log(data);
   ];
 
   return (
+    <>
+    {loading ?<LoadingMui /> : 
     <div className="dataProducttable">
       <div className="datatableTitle">
         Add New Product
@@ -112,6 +120,8 @@ console.log(data);
         />
       </Box>
     </div>
+     }
+    </>
   );
 }
 

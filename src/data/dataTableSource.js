@@ -7,7 +7,7 @@ export const userColumns = [
       renderCell: (params) => {
         return (
           <div className="cellWithImg">
-            <img className="cellImg" src={params.row.img} alt="avatar" />
+            <img className="cellImg" src={params.row.img || 'https://png.pngtree.com/element_our/20200609/ourmid/pngtree-default-avatar-image_2235111.jpg'} alt="avatar" />
             {params.row.username}
           </div>
         );
@@ -46,9 +46,10 @@ export const userColumns = [
       headerName: "Product",
       width: 230,
       renderCell: (params) => {
+        // console.log("params:" , params.row.img[0].img);
         return (
           <div className="cellWithImg">
-            <img className="cellImg" src={params.row.img} alt="avatar" />
+            <img className="cellImg" src={params.row.img[0].img} alt="avatar" />
             {params.row.username}
           </div>
         );

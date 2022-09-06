@@ -12,9 +12,11 @@ import {
   onSnapshot,
 } from "firebase/firestore";
 import { db } from "../../firebase/firebase.Config";
+import { useNavigate } from "react-router-dom";
 
-function Datatable(props) {
+function Datatable() {
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     // const list=[]
     // const fetchData = async () => {
@@ -61,10 +63,20 @@ function Datatable(props) {
       headerName: "Action",
       width: 200,
       renderCell: (params) => {
+        // console.log("checkk id user:", params.row.id);
+        const handleView = () => {
+          navigate("/user/viewUser", { state: params.row.id });
+        };
         return (
           <div className="cellAction">
-            <Link to="/user/test" style={{ textDecoration: "none" }}>
-              <div className="viewButton">View</div>
+            <div onClick={handleView} className="viewButton">
+              View
+            </div>
+            <Link
+              to={`/user/${params.row.id}`}
+              style={{ textDecoration: "none" }}
+            >
+              <div className="viewButton">Edit</div>
             </Link>
             <div
               className="deleteButton"

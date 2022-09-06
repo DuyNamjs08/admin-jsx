@@ -27,7 +27,8 @@ function Login() {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        dispatch(Loginauth(user))
+        console.log('user:' ,user);
+        dispatch(Loginauth(user.uid))
         navigate('/')
 
       })

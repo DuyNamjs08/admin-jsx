@@ -1,69 +1,113 @@
-.productItem{
-    display: flex;
-    .productItemContainer{
-        flex: 6;
-        h1{
-            font-size: 30px;
-            padding: 20px;
-            text-align: center;
-        }
-        .productItemMain{
-            display: flex;
-            padding: 20px;
-            .left{
-                flex: 1;
-                display: flex;
-                padding-top: 60px;
-                align-items: center;
-                flex-direction: column;
-                img{
-                    margin-bottom: 20px;
-                }
-            }
-            .right{
-                flex:1.6;
-                display: flex;
-                flex-direction: column;
-                label{
-                    width: 100%;
-                    font-size: 24px;
-                    margin-bottom: 5px;
-                }
-                input{
-                    width: 40%;
-                    margin-bottom: 10px;
-                    font-size: 16px;
-                    border: none;
-                    outline: none;
-                    padding: 5px ;
-                    &:focus{
-                      border: 1px solid rgb(15, 87, 15);
-                    }
-                }
-                textarea{
-                    width: 80%;
-                    height: 160px;
-                    font-size: 16px;
-                    border: none;
-                    outline: none;
-                    padding:  5px ;
-                    &:focus{
-                        border: 1px solid rgb(15, 87, 15);
-                      }
-
-                }
-                button{
-                    width: 150px;
-                    outline: none;
-                    padding: 10px;
-                    font-size: 16px;
-                    font-weight: bold;
-                    border: none;
-                    background-color: #df0428;
-                    color: #fff;
-                }
-
-            }
-        }
+.productItem {
+  display: flex;
+  .productItemContainer {
+    flex: 6;
+    h1 {
+      font-size: 30px;
+      padding: 20px;
+      text-align: center;
+      color:#C21010
     }
+    .productItemMain {
+      display: flex;
+      padding: 20px;
+      .left {
+        flex: 1;
+        display: flex;
+        padding-top: 60px;
+        align-items: center;
+        flex-direction: column;
+        .list__img__updating{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            button{
+              padding: 5px 20px ;
+              background: transparent;
+              border: 1px solid #df0428;
+              font-size: 16px;
+              cursor: pointer;
+            }
+        }
+        img {
+          margin-bottom: 20px;
+        }
+      }
+      .right {
+        flex: 1.6;
+        display: flex;
+        flex-direction: column;
+        .update__form {
+          .form__size {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            li {
+              display: flex;
+              align-items: center;
+              label {
+                font-size: 14px !important;
+                width: 100px;
+              }
+            }
+          }
+          display: flex;
+          margin-top: 10px;
+          .input__update {
+            width: 160px;
+          }
+          div {
+            display: flex;
+            flex-direction: column;
+            width: 260px;
+          }
+        }
+        label {
+          width: 100%;
+          font-size: 24px;
+          margin-bottom: 5px;
+          color: #1C6758;
+        }
+        input {
+          width: 40%;
+          margin-bottom: 10px;
+          font-size: 16px;
+          border: none;
+          outline: none;
+          padding: 5px;
+          &:focus {
+            border: 1px solid rgb(15, 87, 15);
+          }
+        }
+        textarea {
+          width: 80%;
+          height: 160px;
+          font-size: 16px;
+          border: none;
+          outline: none;
+          padding: 5px;
+          &:focus {
+            border: 1px solid rgb(15, 87, 15);
+          }
+        }
+        select {
+          width: 30%;
+          outline: none;
+        }
+        button {
+          width: 150px;
+          outline: none;
+          padding: 10px;
+          font-size: 16px;
+          font-weight: bold;
+          border: none;
+          background-color: #df0428;
+          color: #fff;
+          cursor: pointer;
+          &:disabled {
+            background-color: #c08791;
+          }
+        }
+      }
+    }
+  }
 }
